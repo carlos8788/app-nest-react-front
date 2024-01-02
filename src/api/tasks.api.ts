@@ -1,7 +1,6 @@
 import { CreateTask } from "../interfaces/task.interface";
 
-const API: string = 'http://localhost:3000/api';
-
+const API: string | undefined = import.meta.env.VITE_URL_API;
 export const createTaskRequest = async (task: CreateTask) =>
     await fetch(`${API}/tasks`, {
         method: 'POST',
